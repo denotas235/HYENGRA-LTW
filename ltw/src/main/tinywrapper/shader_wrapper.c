@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 extern es3_functions_t es3_functions;
+#include "es3_functions.h"
 /**
  * Created by: artDev
  * Copyright (c) 2025 artDev, SerpentSpirale, PojavLauncherTeam, Digital Genesis LLC.
@@ -181,7 +182,7 @@ void glShaderSource(GLuint shader, GLsizei count, const GLchar *const*string, co
     if (patched_src) {
         strcpy(patched_src, precision);
         strcat(patched_src, *string);
-        es3_functions.glShaderSource(shader, count, (const GLchar* const&)patched_src, length);
+        es3_functions.glShaderSource(shader, count, (const GLchar* const*)&patched_src, length);
         free(patched_src);
         return;
     }
@@ -195,7 +196,7 @@ void glShaderSource(GLuint shader, GLsizei count, const GLchar *const*string, co
     if (patched_src) {
         strcpy(patched_src, precision);
         strcat(patched_src, *string);
-        es3_functions.glShaderSource(shader, count, (const GLchar* const&)patched_src, length);
+        es3_functions.glShaderSource(shader, count, (const GLchar* const*)&patched_src, length);
         free(patched_src);
         return;
     }

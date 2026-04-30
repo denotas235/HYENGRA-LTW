@@ -1,6 +1,7 @@
 /**
  * Created by: artDev, DuyKhanhTran
  * Copyright (c) 2025 artDev, SerpentSpirale, PojavLauncherTeam, Digital Genesis LLC.
+#include "es3_functions.h"
  * For use under LGPL-3.0
  */
 #include <stdio.h>
@@ -202,7 +203,7 @@ void glTexParameteri( 	GLenum target,
                          GLint param) {
     if(!current_context) return;
     if(!filter_params_integer(target, pname, param)) return;
-    if(!filter_params_float(target, pname, (GLfloat)param)) return;
+    if(!filter_params_float(target, pname, (GLfloat)param)) return;;
     swizzle_process_swizzle_param(target, pname, &param)
     es3_functions.glTexParameteri(target, pname, param);
 }
