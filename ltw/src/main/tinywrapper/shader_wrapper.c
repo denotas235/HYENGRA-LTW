@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <string.h>
+extern es3_functions_t es3_functions;
 /**
  * Created by: artDev
  * Copyright (c) 2025 artDev, SerpentSpirale, PojavLauncherTeam, Digital Genesis LLC.
@@ -172,9 +175,31 @@ void glDeleteShader(GLuint shader) {
 }
 
 void glShaderSource(GLuint shader, GLsizei count, const GLchar *const*string, const GLint *length) {
+    if (string == NULL || *string == NULL) { es3_functions.glShaderSource(shader, count, string, length); return; }
+    const char* precision = "precision highp float;\nprecision highp int;\n";
+    GLchar* patched_src = malloc(strlen(precision) + strlen(*string) + 1);
+    if (patched_src) {
+        strcpy(patched_src, precision);
+        strcat(patched_src, *string);
+        es3_functions.glShaderSource(shader, count, (const GLchar* const&)patched_src, length);
+        free(patched_src);
+        return;
+    }
+
     if(!current_context) return;
     shader_info_t* shader_info = unordered_map_get(current_context->shader_map, (void*)shader);
     if(shader_info == NULL) {
+    if (string == NULL || *string == NULL) { es3_functions.glShaderSource(shader, count, string, length); return; }
+    const char* precision = "precision highp float;\nprecision highp int;\n";
+    GLchar* patched_src = malloc(strlen(precision) + strlen(*string) + 1);
+    if (patched_src) {
+        strcpy(patched_src, precision);
+        strcat(patched_src, *string);
+        es3_functions.glShaderSource(shader, count, (const GLchar* const&)patched_src, length);
+        free(patched_src);
+        return;
+    }
+
         printf("LTWShdrWp: shader_info missing for shader %u\n", shader);
         es3_functions.glShaderSource(shader, count, string, length);
         return;

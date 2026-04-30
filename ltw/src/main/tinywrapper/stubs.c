@@ -290,7 +290,7 @@ void stub_glDepthRange() {
     printf("Stub: glDepthRange\n");
 }
 static bool trigger_glViewport = false;
-void stub_glViewport() {
+void _stub_glViewport() {
     if(trigger_glViewport) return;
     trigger_glViewport = true;
     printf("Stub: glViewport\n");
@@ -2822,19 +2822,19 @@ void stub_glGetVertexAttribLdv() {
     printf("Stub: glGetVertexAttribLdv\n");
 }
 static bool trigger_glViewportArrayv = false;
-void stub_glViewportArrayv() {
+void _stub_glViewportArrayv() {
     if(trigger_glViewportArrayv) return;
     trigger_glViewportArrayv = true;
     printf("Stub: glViewportArrayv\n");
 }
 static bool trigger_glViewportIndexedf = false;
-void stub_glViewportIndexedf() {
+void _stub_glViewportIndexedf() {
     if(trigger_glViewportIndexedf) return;
     trigger_glViewportIndexedf = true;
     printf("Stub: glViewportIndexedf\n");
 }
 static bool trigger_glViewportIndexedfv = false;
-void stub_glViewportIndexedfv() {
+void _stub_glViewportIndexedfv() {
     if(trigger_glViewportIndexedfv) return;
     trigger_glViewportIndexedfv = true;
     printf("Stub: glViewportIndexedfv\n");
@@ -6470,7 +6470,7 @@ void stub_glBlendBarrierNV() {
     printf("Stub: glBlendBarrierNV\n");
 }
 static bool trigger_glViewportPositionWScaleNV = false;
-void stub_glViewportPositionWScaleNV() {
+void _stub_glViewportPositionWScaleNV() {
     if(trigger_glViewportPositionWScaleNV) return;
     trigger_glViewportPositionWScaleNV = true;
     printf("Stub: glViewportPositionWScaleNV\n");
@@ -7664,7 +7664,7 @@ void stub_glGetIntegerui64i_vNV() {
     printf("Stub: glGetIntegerui64i_vNV\n");
 }
 static bool trigger_glViewportSwizzleNV = false;
-void stub_glViewportSwizzleNV() {
+void _stub_glViewportSwizzleNV() {
     if(trigger_glViewportSwizzleNV) return;
     trigger_glViewportSwizzleNV = true;
     printf("Stub: glViewportSwizzleNV\n");
