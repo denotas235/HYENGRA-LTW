@@ -5,11 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
       - name: Setup Android NDK
         uses: n0rt3n/setup-ndk@v1
         with:
@@ -17,9 +12,9 @@ jobs:
       - name: Build with ndk-build
         run: |
           cd ltw/src/main/tinywrapper/
-          ndk-build APP_BUILD_SCRIPT=Android.mk APP_PLATFORM=android-24
+          ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk APP_PLATFORM=android-24
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: HYENGRA-LTW-Binaries
-          path: ltw/src/main/libs/
+          path: ltw/src/main/tinywrapper/libs/
