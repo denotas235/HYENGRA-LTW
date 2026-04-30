@@ -1,7 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
-extern es3_functions_t es3_functions;
-#include "es3_functions.h"
 /**
  * Created by: artDev
  * Copyright (c) 2025 artDev, SerpentSpirale, PojavLauncherTeam, Digital Genesis LLC.

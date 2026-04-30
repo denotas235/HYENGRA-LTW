@@ -1,0 +1,10 @@
+GL_ANDROID_extension_pack_es31a
+GL_ARM_EGL_image_storage_compression
+GL_DRAW_FRAMEBUFFER is multisampled
+GL_EXT_EGL_image_array
+GL_EXT_YUV_target
+GL_FRAGMENT_PRECISION_HIGH
+GL_OES_EGL_image
+GL_OES_EGL_image_external
+GL_OES_EGL_image_external_essl3
+GL_OES_EGL_sync
